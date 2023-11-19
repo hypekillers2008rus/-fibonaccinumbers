@@ -1,15 +1,16 @@
-int Fib(int n)
+int Fib(int N)
 {
-    if (n==1 || n==2)
-        return 1;
-    return Fib(n-1)+Fib(n-2);
+  if (N == 1 || N == 2)
+    return 1;
+  return Fib(N - 1) + Fib(N - 2);
 }
 int main()
 {
-    int n;
-    printf("n=");
-    scanf("%d", &n);
-    for (i==1 ; i<=n; i++)
-        printf("%d", Fib(i));
-    return 0;
+  int N;
+  printf("N=");
+  scanf("%d", &N);
+  for (int i = 1; i <= N; i++)
+    printf("%d ", Fib(i));
+  getchar(); getchar();
+  return 0;
 }
