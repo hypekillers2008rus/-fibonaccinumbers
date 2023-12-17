@@ -1,16 +1,20 @@
-int Fib(int N)
-{
-  if (N == 1 || N == 2)
-    return 1;
-  return Fib(N - 1) + Fib(N - 2);
-}
 int main()
 {
   int N;
-  printf("N=");
+  printf("N="); // вводим число N
   scanf("%d", &N);
-  for (int i = 1; i <= N; i++)
-    printf("%d ", Fib(i));
-  getchar(); getchar();
+  int a = 1, b = 1, c;
+  if (N <= 2) // Первые два числа (a и b) равны 1
+    printf("1 ");
+  else 
+  {
+    for (int i = 3; i <= N; i++) 
+    {
+      c = a + b; // вычисляем следующее число как сумму двух предыдущих
+      a = b; b = c; // перемещаем два предыдущих числа
+    }
+    printf("%d ", b); // выводим последнее число
+  }
+  getchar();  getchar();
   return 0;
 }
