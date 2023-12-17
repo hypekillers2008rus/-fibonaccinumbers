@@ -1,20 +1,24 @@
-int main()
-{
-  int N;
-  printf("N="); // вводим число N
-  scanf("%d", &N);
-  int a = 1, b = 1, c;
-  if (N <= 2) // Первые два числа (a и b) равны 1
-    printf("1 ");
-  else 
-  {
-    for (int i = 3; i <= N; i++) 
-    {
-      c = a + b; // вычисляем следующее число как сумму двух предыдущих
-      a = b; b = c; // перемещаем два предыдущих числа
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    unsigned long long int first = 0, second = 1, next;
+
+    printf("n= ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+
+    for (i = 0; i < n; i++) {
+        if (i <= 1) {
+            next = i;
+        } else {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%llu ", next);
     }
-    printf("%d ", b); // выводим последнее число
-  }
-  getchar();  getchar();
-  return 0;
+
+    return 0;
 }
